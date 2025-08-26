@@ -61,7 +61,24 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Colaboraê Brand Colors
+				colaborae: {
+					blue: 'hsl(var(--colaborae-blue))',
+					green: 'hsl(var(--colaborae-green))', 
+					coral: 'hsl(var(--colaborae-coral))',
+					cyan: 'hsl(var(--colaborae-cyan))'
 				}
+			},
+			fontFamily: {
+				'display': ['Poppins', 'system-ui', 'sans-serif'],
+				'body': ['Inter', 'system-ui', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-events': 'var(--gradient-events)', 
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-coral': 'var(--gradient-coral)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

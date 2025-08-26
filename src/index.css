@@ -8,65 +8,72 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    /* Colaboraê Brand Colors */
+    --colaborae-blue: 202 95% 15%;         /* #022744 */
+    --colaborae-green: 80 84% 40%;         /* #9BD60C */
+    --colaborae-coral: 3 100% 68%;         /* #FF5E5B */
+    --colaborae-cyan: 194 100% 50%;        /* #00D1FF */
+    
+    /* Light Theme Base */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --foreground: 202 95% 15%;
+    
+    --card: 0 0% 97%;
+    --card-foreground: 202 95% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 202 95% 15%;
+    
+    --primary: 202 95% 15%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 80 84% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 202 30% 40%;
+    
+    --accent: 80 84% 40%;
+    --accent-foreground: 202 95% 15%;
+    
+    --destructive: 3 100% 68%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 202 20% 85%;
+    --input: 202 20% 90%;
+    --ring: 202 95% 15%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(202 95% 8%), hsl(202 95% 4%));
+    --gradient-events: linear-gradient(180deg, hsl(202 95% 4%), hsl(202 95% 8%));
+    --gradient-accent: linear-gradient(90deg, hsl(80 84% 40%), hsl(194 100% 50%));
+    --gradient-coral: linear-gradient(135deg, hsl(3 100% 68%), hsl(3 100% 58%));
+    
+    /* Dark Sections */
+    --dark-bg: 0 0% 4%;
+    --dark-surface: 0 0% 8%;
+    --dark-foreground: 0 0% 95%;
+    
+    /* Light Sections */  
+    --light-bg: 0 0% 97%;
+    --light-surface: 0 0% 100%;
+    --light-foreground: 202 95% 15%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 202 95% 15%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -101,5 +108,60 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Dark Theme Sections */
+  .section-dark {
+    @apply bg-[hsl(var(--dark-bg))] text-[hsl(var(--dark-foreground))];
+  }
+  
+  .section-events {
+    background: var(--gradient-events);
+    @apply text-[hsl(var(--dark-foreground))];
+  }
+  
+  .section-hero {
+    background: var(--gradient-hero);
+    @apply text-[hsl(var(--dark-foreground))];
+  }
+  
+  /* Light Theme Sections */
+  .section-light {
+    @apply bg-[hsl(var(--light-bg))] text-[hsl(var(--light-foreground))];
+  }
+  
+  .section-bistro {
+    @apply bg-[hsl(var(--light-surface))] text-[hsl(var(--light-foreground))];
+  }
+  
+  /* Gradient Accents */
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-coral {
+    background: var(--gradient-coral);
+  }
+  
+  /* Neon Effects */
+  .neon-green {
+    @apply text-[hsl(var(--colaborae-green))];
+    text-shadow: 0 0 10px hsl(var(--colaborae-green) / 0.5);
+  }
+  
+  .neon-cyan {
+    @apply text-[hsl(var(--colaborae-cyan))];
+    text-shadow: 0 0 10px hsl(var(--colaborae-cyan) / 0.5);
+  }
+  
+  /* Glassmorphism */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl;
+  }
+  
+  .glass-card-light {
+    @apply bg-white/80 backdrop-blur-md border border-white/40 rounded-2xl;
   }
 }
