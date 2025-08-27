@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -11,26 +12,26 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="font-display font-bold text-2xl text-white">
+            <Link to="/" className="font-display font-bold text-2xl text-white hover:text-colaborae-cyan transition-colors">
               Colaboraê
-            </h1>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="/" className="text-white hover:text-colaborae-cyan transition-colors font-body">
+              <Link to="/" className="text-white hover:text-colaborae-cyan transition-colors font-body">
                 Início
-              </a>
-              <a href="/eventos" className="text-white hover:text-colaborae-cyan transition-colors font-body">
+              </Link>
+              <Link to="/eventos" className="text-white hover:text-colaborae-cyan transition-colors font-body">
                 Eventos
-              </a>
-              <a href="/bistro" className="text-white hover:text-colaborae-cyan transition-colors font-body">
+              </Link>
+              <Link to="/bistro" className="text-white hover:text-colaborae-cyan transition-colors font-body">
                 Bistrô
-              </a>
-              <a href="/contato" className="text-white hover:text-colaborae-cyan transition-colors font-body">
+              </Link>
+              <Link to="/contato" className="text-white hover:text-colaborae-cyan transition-colors font-body">
                 Contato
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -51,34 +52,34 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 rounded-lg mt-2">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-white hover:text-colaborae-cyan block px-3 py-2 text-base font-body"
                 onClick={() => setIsOpen(false)}
               >
                 Início
-              </a>
-              <a
-                href="/eventos"
+              </Link>
+              <Link
+                to="/eventos"
                 className="text-white hover:text-colaborae-cyan block px-3 py-2 text-base font-body"
                 onClick={() => setIsOpen(false)}
               >
                 Eventos
-              </a>
-              <a
-                href="/bistro"
+              </Link>
+              <Link
+                to="/bistro"
                 className="text-white hover:text-colaborae-cyan block px-3 py-2 text-base font-body"
                 onClick={() => setIsOpen(false)}
               >
                 Bistrô
-              </a>
-              <a
-                href="/contato"
+              </Link>
+              <Link
+                to="/contato"
                 className="text-white hover:text-colaborae-cyan block px-3 py-2 text-base font-body"
                 onClick={() => setIsOpen(false)}
               >
                 Contato
-              </a>
+              </Link>
             </div>
           </div>
         )}

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Filter, Ticket } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -20,7 +21,7 @@ interface Event {
 
 const mockEvents: Event[] = [
   {
-    id: '1',
+    id: 'noite-eletronica-setembro',
     title: 'Noite Eletrônica',
     date: '15 SET 2024',
     time: '22:00',
@@ -32,7 +33,7 @@ const mockEvents: Event[] = [
     status: 'available'
   },
   {
-    id: '2',
+    id: 'samba-de-roda-setembro',
     title: 'Samba de Roda',
     date: '22 SET 2024',
     time: '20:00',
@@ -44,7 +45,7 @@ const mockEvents: Event[] = [
     status: 'available'
   },
   {
-    id: '3',
+    id: 'jazz-blues-night-setembro',
     title: 'Jazz & Blues Night',
     date: '29 SET 2024',
     time: '21:00',
@@ -56,7 +57,7 @@ const mockEvents: Event[] = [
     status: 'coming-soon'
   },
   {
-    id: '4',
+    id: 'axe-music-festival-outubro',
     title: 'Axé Music Festival',
     date: '05 OUT 2024',
     time: '19:00',
@@ -68,7 +69,7 @@ const mockEvents: Event[] = [
     status: 'sold-out'
   },
   {
-    id: '5',
+    id: 'rap-nacional-outubro',
     title: 'Rap Nacional',
     date: '12 OUT 2024',
     time: '21:30',
@@ -80,7 +81,7 @@ const mockEvents: Event[] = [
     status: 'available'
   },
   {
-    id: '6',
+    id: 'bossa-nova-experience-outubro',
     title: 'Bossa Nova Experience',
     date: '19 OUT 2024',
     time: '20:30',
@@ -231,6 +232,14 @@ const Eventos = () => {
                       <MapPin className="w-4 h-4 text-colaborae-coral" />
                       <span className="font-body text-sm">{event.location}</span>
                     </div>
+                  </div>
+
+                  <div className="flex gap-2 mb-4">
+                    <Link to={`/eventos/${event.id}`} className="flex-1">
+                      <Button variant="outline" size="sm" className="w-full text-white border-white/20 hover:bg-white/10">
+                        Ver Detalhes
+                      </Button>
+                    </Link>
                   </div>
 
                   {getActionButton(event)}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Calendar, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroEventImage from '@/assets/hero-event.jpg';
@@ -15,7 +16,7 @@ interface Event {
 
 const mockEvents: Event[] = [
   {
-    id: '1',
+    id: 'noite-eletronica-setembro',
     title: 'Noite Eletrônica',
     date: '15 SET',
     time: '22:00',
@@ -24,7 +25,7 @@ const mockEvents: Event[] = [
     description: 'Uma noite inesquecível com os melhores DJs da cena eletrônica baiana'
   },
   {
-    id: '2',
+    id: 'samba-de-roda-setembro',
     title: 'Samba de Roda',
     date: '22 SET',
     time: '20:00',
@@ -33,7 +34,7 @@ const mockEvents: Event[] = [
     description: 'Tradição e cultura baiana em uma noite especial'
   },
   {
-    id: '3',
+    id: 'jazz-blues-night-setembro',
     title: 'Jazz & Blues Night',
     date: '29 SET',
     time: '21:00',
@@ -119,9 +120,11 @@ const EventsCarousel = () => {
                 <Button variant="hero" size="lg">
                   Comprar Ingresso
                 </Button>
-                <Button variant="glass" size="lg">
-                  Ver Detalhes
-                </Button>
+                <Link to={`/eventos/${mockEvents[currentSlide].id}`}>
+                  <Button variant="glass" size="lg">
+                    Ver Detalhes
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
